@@ -1,4 +1,6 @@
 const dropdown = document.querySelector(".navbar__right__dropdown");
+const dropdownRows = document.querySelectorAll(".navbar__right__dropdown__row");
+const userWrapper = document.querySelector(".navbar__right__user__wrapper");
 const alertDropdown = document.querySelector(".navbar__right__alert__dropdown");
 const planCard = document.querySelector(".plan__card");
 const setup = document.querySelector(".setup");
@@ -14,6 +16,15 @@ const checkboxActiveClass = "setup__item__header__checkbox--active";
 const toggleDropdown = () => {
   alertDropdown.classList.remove(alertDropdownActiveClass);
   dropdown.classList.toggle(dropdownActiveClass);
+
+  const isExpanded = userWrapper.attributes["aria-expanded"].value === "true";
+
+  if (isExpanded) {
+    userWrapper.ariaExpanded = "false";
+  } else {
+    userWrapper.ariaExpanded = "true";
+    dropdownRows.item(0).focus();
+  }
 };
 
 const toggleAlertDropdown = () => {
@@ -40,12 +51,23 @@ setupItems.forEach((setupItem, index) => {
   const checkbox = setupItem.querySelector(".setup__item__header__checkbox");
 
   setupItemHeader.addEventListener("click", (event) => {
-    event.preventDefault()
+    event.preventDefault();
     setupItem.classList.add("setup__item--active");
     handleCloseRest(index);
   });
 
   checkbox.addEventListener("click", () => {
     checkbox.classList.toggle(checkboxActiveClass);
+
+    const checked = document.querySelectorAll("." + checkboxActiveClass);
+    const progress = document.querySelector(
+      ".setup__header__left__progress__value"
+    );
+    const count = document.querySelector(
+      ".setup__header__left__progress__wrapper__count"
+    );
+
+    count.innerHTML = checked.length;
+    progress.style.setProperty("width", `${(72 / 5) * checked.length}px`);
   });
 });
