@@ -358,6 +358,7 @@ a {
   line-height: 130%;
   width: fit-content;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .plan__card__right__close {
@@ -636,8 +637,6 @@ a {
     font-size: 12px;
     font-weight: 500;
     line-height: 130%;
-  }
-  .user__image {
   }
 
   .body {
