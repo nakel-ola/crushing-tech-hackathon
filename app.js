@@ -69,5 +69,13 @@ setupItems.forEach((setupItem, index) => {
 
     count.innerHTML = checked.length;
     progress.style.setProperty("width", `${(72 / 5) * checked.length}px`);
+
+    setTimeout(() => {
+      if (index + 1 < 5)
+        setupItems
+          .item(index + 1)
+          .querySelector(".setup__item__header")
+          .click();
+    }, 0);
   });
 });
