@@ -72,12 +72,13 @@ a {
   gap: 6px;
   flex: 1;
   border-radius: 8px;
-  border: 1px solid var(--stroke-s-200, #616161);
+  outline: 1px solid var(--stroke-s-200, #616161);
   background: var(--grey-gray-200, #303030);
 }
 
-.navbar__search__wrapper:hover {
-  border: 1.5px solid var(--stroke-s-50, #616161);
+.navbar__search__wrapper:hover,
+.navbar__search__wrapper:focus-within {
+  outline: 1.5px solid var(--stroke-s-50, #616161);
 }
 
 .navbar__search__icon {
