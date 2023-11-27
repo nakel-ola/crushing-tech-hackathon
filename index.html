@@ -309,8 +309,8 @@
       </div>
     </nav>
 
-    <div class="body">
-      <div class="plan__card">
+    <main class="body">
+      <section class="plan__card">
         <div class="plan__card__left">
           <p class="plan__card__left__text">
             Extend your trial for $1/month for 3 months on select plans.
@@ -327,7 +327,7 @@
 
         <button
           onclick="togglePlanCard()"
-          aria-label="Close"
+          aria-label="Close plan card"
           class="plan__card__right__close"
         >
           <svg
@@ -344,16 +344,16 @@
             />
           </svg>
         </button>
-      </div>
+      </section>
 
-      <div
+      <section
         class="setup setup__items--active"
         role="region"
         aria-labelledby="setup-header"
       >
         <!-- header -->
 
-        <div class="setup__header">
+        <header class="setup__header">
           <div class="setup__header__left">
             <p class="setup__header__left__title">Setup guide</p>
             <p class="setup__header__left__subtitle">
@@ -416,19 +416,22 @@
               />
             </svg>
           </button>
-        </div>
+        </header>
 
         <!-- items -->
-        <div class="setup__items setup__items--active">
+        <div class="setup__items setup__items--active" role="list">
           <!-- item-1 -->
-          <div class="setup__item setup__item--active">
+          <article
+            class="setup__item setup__item--active"
+            role="listitem"
+            aria-expanded="true"
+          >
             <div class="setup__item__left">
               <a href="#" role="button" class="setup__item__header">
                 <button
                   class="setup__item__header__checkbox"
                   aria-checked="false"
-                  role="checkbox"
-                  aria-label="Check items"
+                  aria-label="Check customize your online store"
                   tabindex="0"
                 >
                   <svg
@@ -495,7 +498,7 @@
                   </svg>
                 </button>
 
-                <p class="">Customize your online store</p>
+                <p aria-hidden="true" class="">Customize your online store</p>
               </a>
 
               <div class="setup__item__content">
@@ -524,17 +527,16 @@
                 class=""
               />
             </div>
-          </div>
+          </article>
 
           <!-- item-2 -->
-          <div class="setup__item">
+          <article class="setup__item" role="listitem" aria-expanded="false">
             <div class="setup__item__left">
               <a href="#" role="button" class="setup__item__header">
                 <button
                   class="setup__item__header__checkbox"
-                  aria-label="Check items"
+                  aria-label="Check add your first product"
                   aria-checked="false"
-                  role="checkbox"
                   tabindex="0"
                 >
                   <svg
@@ -601,7 +603,7 @@
                   </svg>
                 </button>
 
-                <p class="">Add your first product</p>
+                <p aria-hidden="true" class="">Add your first product</p>
               </a>
 
               <div class="setup__item__content">
@@ -633,17 +635,16 @@
                 class=""
               />
             </div>
-          </div>
+          </article>
 
           <!-- item-3 -->
-          <div class="setup__item">
+          <article class="setup__item" role="listitem" aria-expanded="false">
             <div class="setup__item__left">
               <a href="#" role="button" class="setup__item__header">
                 <button
                   class="setup__item__header__checkbox"
                   aria-checked="false"
-                  role="checkbox"
-                  aria-label="Check items"
+                  aria-label="Check add a custom domain"
                   tabindex="0"
                 >
                   <svg
@@ -710,7 +711,7 @@
                   </svg>
                 </button>
 
-                <p class="">Add a custom domain</p>
+                <p aria-hidden="true" class="">Add a custom domain</p>
               </a>
 
               <div class="setup__item__content">
@@ -736,17 +737,16 @@
                 class=""
               />
             </div>
-          </div>
+          </article>
 
           <!-- item-4 -->
-          <div class="setup__item">
+          <article class="setup__item" role="listitem" aria-expanded="false">
             <div class="setup__item__left">
               <a href="#" role="button" class="setup__item__header">
                 <button
                   class="setup__item__header__checkbox"
                   aria-checked="false"
-                  role="checkbox"
-                  aria-label="Check items"
+                  aria-label="Check name your store"
                   tabindex="0"
                 >
                   <svg
@@ -813,7 +813,7 @@
                   </svg>
                 </button>
 
-                <p class="">Name your store</p>
+                <p aria-hidden="true" class="">Name your store</p>
               </a>
 
               <div class="setup__item__content">
@@ -841,17 +841,16 @@
                 class=""
               />
             </div>
-          </div>
+          </article>
 
           <!-- item-5 -->
-          <div class="setup__item">
+          <article class="setup__item" role="listitem" aria-expanded="false">
             <div class="setup__item__left">
               <a href="#" role="button" class="setup__item__header">
                 <button
                   class="setup__item__header__checkbox"
                   aria-checked="false"
-                  role="checkbox"
-                  aria-label="Check items"
+                  aria-label="Check set up a payment provider"
                   tabindex="0"
                 >
                   <svg
@@ -918,7 +917,7 @@
                   </svg>
                 </button>
 
-                <p class="">Set up a payment provider</p>
+                <p aria-hidden="true" class="">Set up a payment provider</p>
               </a>
 
               <div class="setup__item__content">
@@ -946,10 +945,10 @@
                 class=""
               />
             </div>
-          </div>
+          </article>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
     <script src="./app.js"></script>
   </body>

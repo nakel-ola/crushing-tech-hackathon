@@ -22,6 +22,7 @@ const alertDropdownActiveClass = "navbar__right__alert__dropdown--active";
 const planCardHiddenClass = "plan__card--hidden";
 const setupItemsActiveClass = "setup__items--active";
 const checkboxActiveClass = "setup__item__header__checkbox--active";
+const setupItemActiveClass = "setup__item--active";
 
 // Toggle dropdown visibility
 const toggleDropdown = () => {
@@ -81,7 +82,10 @@ const toggleSetup = () => {
 const handleCloseRest = (index) => {
   [...setupItems]
     .filter((_, i) => i !== index)
-    .forEach((item) => item.classList.remove("setup__item--active"));
+    .forEach((item) => {
+      item.classList.remove(setupItemActiveClass);
+      item.setAttribute("aria-expanded", "false");
+    });
 };
 
 // Setup item event listeners
@@ -92,7 +96,12 @@ setupItems.forEach((setupItem, index) => {
   // Click event on setup item header
   setupItemHeader.addEventListener("click", (event) => {
     event.preventDefault();
-    setupItem.classList.add("setup__item--active");
+
+    if (!setupItem.classList.contains(setupItemActiveClass)) {
+      setupItem.classList.add(setupItemActiveClass);
+      setupItem.setAttribute("aria-expanded", "true");
+    }
+
     handleCloseRest(index);
   });
 
@@ -103,11 +112,22 @@ setupItems.forEach((setupItem, index) => {
     checkbox.classList.toggle(checkboxActiveClass);
 
     checkbox.setAttribute("aria-checked", !isChecked);
+    const ariaLabel = checkbox.getAttribute("aria-label");
+
+    checkbox.setAttribute(
+      "aria-label",
+      isChecked
+        ? ariaLabel.replace("Uncheck", "Check")
+        : ariaLabel.replace("Check", "Uncheck")
+    );
 
     // Update progress after checkbox click
     updateProgress();
 
-    setTimeout(() => expandNextStep(index), 0);
+    // if the current step is checked move to the next step
+    if (!isChecked) {
+      setTimeout(() => expandNextStep(index), 0);
+    }
   });
 });
 
@@ -129,7 +149,7 @@ const expandNextStep = (index) => {
 
   if (
     nextElm &&
-    !nextElm.classList.contains("setup__item--active") &&
+    !nextElm.classList.contains(setupItemActiveClass) &&
     !isNextChecked
   ) {
     activateNextStep(nextElm);
