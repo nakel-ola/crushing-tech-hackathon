@@ -61,6 +61,7 @@
           <button
             onclick="toggleAlertDropdown()"
             class="navbar__right__bell__icon"
+            aria-expanded="false"
             aria-label="Toggle Alerts"
           >
             <svg
@@ -250,6 +251,7 @@
             <div class="">
               <button
                 aria-label="Filter"
+                id="filter-icon"
                 class="navbar__right__alert__header__icon"
               >
                 <svg
@@ -276,6 +278,7 @@
 
               <button
                 aria-label="Mark all as read"
+                id="checkmark-icon"
                 class="navbar__right__alert__header__icon"
               >
                 <svg
