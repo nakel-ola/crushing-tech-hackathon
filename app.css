@@ -345,7 +345,6 @@ a {
   padding: 6px 12px;
   align-items: center;
   margin-top: 18px;
-  margin-bottom: auto;
   gap: 8px;
   border: 0;
   padding: 10px 16px;
@@ -365,6 +364,8 @@ a {
 .plan__card__right__close {
   background-color: transparent;
   border: 0;
+  margin-bottom: auto;
+  margin-top: 15px;
 }
 
 .plan__card__right__close__icon {
@@ -663,6 +664,13 @@ a {
   }
 
   .plan__card__left__button {
+    margin-top: 0px;
+  }
+
+  .plan__card__right__close {
+    background-color: transparent;
+    border: 0;
+    margin-bottom: 0px;
     margin-top: 0px;
   }
 

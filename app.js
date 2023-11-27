@@ -97,11 +97,10 @@ setupItems.forEach((setupItem, index) => {
   setupItemHeader.addEventListener("click", (event) => {
     event.preventDefault();
 
-    if (!setupItem.classList.contains(setupItemActiveClass)) {
-      setupItem.classList.add(setupItemActiveClass);
-      setupItem.setAttribute("aria-expanded", "true");
-    }
+    if (setupItem.classList.contains(setupItemActiveClass)) return;
 
+    setupItem.classList.add(setupItemActiveClass);
+    setupItem.setAttribute("aria-expanded", "true");
     handleCloseRest(index);
   });
 
@@ -125,9 +124,7 @@ setupItems.forEach((setupItem, index) => {
     updateProgress();
 
     // if the current step is checked move to the next step
-    if (!isChecked) {
-      setTimeout(() => expandNextStep(index), 0);
-    }
+    if (!isChecked) setTimeout(() => expandNextStep(index), 0);
   });
 });
 
