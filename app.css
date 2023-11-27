@@ -171,6 +171,7 @@ a {
 
 .navbar__right__dropdown,
 .navbar__right__alert__dropdown {
+  height: 0px;
   display: none;
   position: absolute;
   top: 70px;
@@ -182,7 +183,6 @@ a {
   border: 1px solid var(--stroke-s-50, #dbdbdb);
   background: var(--White, #fff);
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
-  max-height: 500px;
   transition: all 300ms ease-in;
 }
 
@@ -190,7 +190,6 @@ a {
   padding: 10px;
   gap: 10px;
 }
-
 .navbar__right__dropdown__row,
 .navbar__right__dropdown__row__with__subtitle {
   display: flex;

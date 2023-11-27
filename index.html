@@ -95,10 +95,10 @@
         </button>
 
         <!-- dropdown -->
-        <div class="navbar__right__dropdown">
+        <div role="menubar" class="navbar__right__dropdown">
           <div class="navbar__right__dropdown__section">
             <a
-              role="button"
+              role="menuitem"
               href="https://admin.shopify.com"
               aria-label="Davii Collections"
               class="navbar__right__dropdown__row navbar__right__dropdown__row--active"
@@ -132,7 +132,7 @@
             </a>
 
             <a
-              role="button"
+              role="menuitem"
               href="https://admin.shopify.com"
               class="navbar__right__dropdown__row"
             >
@@ -161,7 +161,7 @@
 
           <div class="navbar__right__dropdown__section">
             <a
-              role="button"
+              role="menuitem"
               href="https://admin.shopify.com"
               aria-label="Help Center"
               class="navbar__right__dropdown__row"
@@ -170,7 +170,7 @@
             </a>
 
             <a
-              role="button"
+              role="menuitem"
               href="https://admin.shopify.com"
               aria-label="Changelog"
               class="navbar__right__dropdown__row"
@@ -179,7 +179,7 @@
             </a>
 
             <a
-              role="button"
+              role="menuitem"
               href="https://admin.shopify.com"
               class="navbar__right__dropdown__row"
               aria-label="Community forums"
@@ -188,7 +188,7 @@
             </a>
 
             <a
-              role="button"
+              role="menuitem"
               href="https://admin.shopify.com"
               aria-label="Hire a Shopify Partner"
               class="navbar__right__dropdown__row"
@@ -199,7 +199,7 @@
             </a>
 
             <a
-              role="button"
+              role="menuitem"
               href="https://admin.shopify.com"
               class="navbar__right__dropdown__row"
               aria-label="Keyboard shortcuts"
@@ -214,7 +214,7 @@
 
           <div class="navbar__right__dropdown__section">
             <a
-              role="button"
+              role="menuitem"
               href="https://admin.shopify.com"
               class="navbar__right__dropdown__row__with__subtitle"
               aria-label="David Micheal"
@@ -225,7 +225,7 @@
               </p>
             </a>
             <a
-              role="button"
+              role="menuitem"
               href="https://admin.shopify.com"
               class="navbar__right__dropdown__row"
               aria-label="Manage account"
@@ -233,7 +233,7 @@
               <p class="navbar__right__dropdown__row__text">Manage account</p>
             </a>
             <a
-              role="button"
+              role="menuitem"
               href="https://admin.shopify.com"
               class="navbar__right__dropdown__row"
               aria-label="Log out"
@@ -244,7 +244,7 @@
         </div>
 
         <!-- alert dropdown -->
-        <div class="navbar__right__alert__dropdown">
+        <!-- <div class="navbar__right__alert__dropdown">
           <div class="navbar__right__alert__header">
             <p class="">Alerts</p>
 
@@ -305,7 +305,7 @@
           <div class="navbar__right__alert__content">
             <p class="">Alerts about your store and account will show here</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </nav>
 
@@ -421,13 +421,14 @@
         <!-- items -->
         <div class="setup__items setup__items--active" role="list">
           <!-- item-1 -->
-          <article
-            class="setup__item setup__item--active"
-            role="listitem"
-            aria-expanded="true"
-          >
+          <article class="setup__item setup__item--active" role="listitem">
             <div class="setup__item__left">
-              <a href="#" role="button" class="setup__item__header">
+              <a
+                href="#"
+                aria-expanded="true"
+                role="button"
+                class="setup__item__header"
+              >
                 <button
                   class="setup__item__header__checkbox"
                   aria-checked="false"
@@ -530,9 +531,14 @@
           </article>
 
           <!-- item-2 -->
-          <article class="setup__item" role="listitem" aria-expanded="false">
+          <article class="setup__item" role="listitem">
             <div class="setup__item__left">
-              <a href="#" role="button" class="setup__item__header">
+              <a
+                href="#"
+                aria-expanded="false"
+                role="button"
+                class="setup__item__header"
+              >
                 <button
                   class="setup__item__header__checkbox"
                   aria-label="Check add your first product"
@@ -638,9 +644,14 @@
           </article>
 
           <!-- item-3 -->
-          <article class="setup__item" role="listitem" aria-expanded="false">
+          <article class="setup__item" role="listitem">
             <div class="setup__item__left">
-              <a href="#" role="button" class="setup__item__header">
+              <a
+                href="#"
+                aria-expanded="false"
+                role="button"
+                class="setup__item__header"
+              >
                 <button
                   class="setup__item__header__checkbox"
                   aria-checked="false"
@@ -740,9 +751,14 @@
           </article>
 
           <!-- item-4 -->
-          <article class="setup__item" role="listitem" aria-expanded="false">
+          <article class="setup__item" role="listitem">
             <div class="setup__item__left">
-              <a href="#" role="button" class="setup__item__header">
+              <a
+                href="#"
+                aria-expanded="false"
+                role="button"
+                class="setup__item__header"
+              >
                 <button
                   class="setup__item__header__checkbox"
                   aria-checked="false"
@@ -844,9 +860,14 @@
           </article>
 
           <!-- item-5 -->
-          <article class="setup__item" role="listitem" aria-expanded="false">
+          <article class="setup__item" role="listitem">
             <div class="setup__item__left">
-              <a href="#" role="button" class="setup__item__header">
+              <a
+                href="#"
+                role="button"
+                aria-expanded="false"
+                class="setup__item__header"
+              >
                 <button
                   class="setup__item__header__checkbox"
                   aria-checked="false"

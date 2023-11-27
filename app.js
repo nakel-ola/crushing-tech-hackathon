@@ -84,7 +84,9 @@ const handleCloseRest = (index) => {
     .filter((_, i) => i !== index)
     .forEach((item) => {
       item.classList.remove(setupItemActiveClass);
-      item.setAttribute("aria-expanded", "false");
+      item
+        .querySelector(".setup__item__header")
+        .setAttribute("aria-expanded", "false");
     });
 };
 
@@ -100,7 +102,7 @@ setupItems.forEach((setupItem, index) => {
     if (setupItem.classList.contains(setupItemActiveClass)) return;
 
     setupItem.classList.add(setupItemActiveClass);
-    setupItem.setAttribute("aria-expanded", "true");
+    setupItemHeader.setAttribute("aria-expanded", "true");
     handleCloseRest(index);
   });
 
@@ -158,9 +160,7 @@ const expandNextStep = (index) => {
           .classList.contains(checkboxActiveClass)
     );
 
-    if (items.length > 0) {
-      activateNextStep(items[0]);
-    }
+    if (items.length > 0) activateNextStep(items[0]);
   }
 };
 
